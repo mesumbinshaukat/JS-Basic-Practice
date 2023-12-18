@@ -14,3 +14,16 @@ if(!false){
 console.log(num1);
 console.log(num2);
 console.log(num3);
+
+const name = "Jonah"
+
+if(name === "Jonah"){
+    const lastName = "Abraham"
+    if(lastName === "Abraham"){
+        const fullName = `${name} ${lastName}`
+        console.log(fullName);
+    }
+    // console.log(fullName); //Can't access fullName because it is only limited to child condition
+    console.log(lastName); // Can access it
+}
+
