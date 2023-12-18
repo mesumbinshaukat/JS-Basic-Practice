@@ -40,3 +40,4 @@ console.log(printObject());
 
 const printArray = () => ([12, 14, 19, 100, 50, 999])
 console.log(printArray());
+
