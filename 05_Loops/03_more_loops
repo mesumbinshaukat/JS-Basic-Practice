@@ -1,16 +1,16 @@
-// const arr = ["Chair", "Table", "Light", "Wire", "TV", "Laptop"]
-// for (const things of arr) {
-//     console.log(things);
+const arr = ["Chair", "Table", "Light", "Wire", "TV", "Laptop"]
+for (const things of arr) {
+    console.log(things);
 
-// }
+}
 
-// const fullRandomName = "Robert Downey Jr."
-// count = 1
+const fullRandomName = "Robert Downey Jr."
+count = 1
 
-// for (const fRName of fullRandomName) {
-//     console.log(`${count}) ${fRName}`);
-//     count ++;
-// }
+for (const fRName of fullRandomName) {
+    console.log(`${count}) ${fRName}`);
+    count ++;
+}
 
 let map = new Map()
 map.set("Pk", "Pakistan")
