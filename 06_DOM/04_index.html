@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final DOM Manipulation</title>
+    <style>
+        *{
+            background-color: #212121;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="languages">
+        <li>English</li>
+    </ul>
+
+
+<script>
+
+function addLanguages_Optimized(lang){
+    const li = document.createElement("li")
+    li.appendChild(document.createTextNode(lang))
+    document.querySelector(".languages").appendChild(li)
+} //This is the optimized code because we're directly appending in UL tag that append LI tag. 
+
+//If I will use .innerHTML then it will load the whole web-app and it's not a good practice, so using var.appendChild() is a better approach for large scalable applications.
+
+addLanguages_Optimized("Urdu")
+addLanguages_Optimized("Spanish")
+addLanguages_Optimized("Swedish")
+addLanguages_Optimized("Arabic")
+
+function editLanguages_Unoptimized (firstLang, secondLang){
+    const li = document.createElement("li")
+    li.innerText = secondLang
+    document.querySelector("li:nth-child(3)").replaceWith(li)
+
+    const first_li = document.querySelector("li:first-child")
+    first_li.outerHTML = `<li>${firstLang}</li>`
+} // This is the unoptimized approach. :)
+
+editLanguages_Unoptimized("English - USA", "Chinese")
+
+const rem_li = document.querySelector("li:last-child")
+rem_li.remove()
+
+</script>
+
+</body>
+</html>
