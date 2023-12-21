@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Operation On DOM</title>
+    <style>
+        *{
+            background-color: #212121;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Basic DOM Event Operation</h1>
+        </header>
+    </div>
+    <div class="container">
+        <main>
+            <h3 id="practice">
+                Practice Started
+            </h3>
+            <div class="parent-class">
+                <h4 class="heading">Parent Class</h4>
+                <div class="child">
+                    <div class="child-class">
+                        <h5 class="heading">Child Class - 1</h5>
+                    </div>
+                    <div class="child-class">
+                        <h5 class="heading">Child Class - 2</h5>
+                    </div>
+                    <div class="child-class">
+                        <h5 class="heading">Child Class - 3</h5>
+                    </div>
+                    <div class="child-class">
+                        <h5 class="heading">Child Class - 4</h5>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <script>
+        const pClass = document.querySelector(".parent-class")
+        console.log(pClass);
+        console.log(pClass.children[0].innerHTML);
+        console.log(pClass.firstElementChild.innerText);
+        const cClass = pClass.querySelector(".child");
+        console.log(cClass);
+        const val1 = cClass.firstElementChild.innerHTML = "<h5>First Class</h5>"
+        console.log(val1);
+        const val2 = cClass.lastElementChild.innerHTML = "<h5>Last Class</h5>"
+        console.log(val2);
+        const val3 = cClass.parentElement.firstChild.nextSibling.innerText
+        console.log(val3); 
+        const val4 = cClass.childNodes
+        console.log(val4);
+        const val5 = val4.length
+        console.log(val5);
+        const val6 = val4.values()
+        console.log(val6);
+        for (let i = 0; i < cClass.children.length; i++) {
+            const element = cClass.children[i];
+            const e = element.childNodes[i]
+            console.log(e);
+            console.log(element);
+        }
+    </script>
+</body>
+</html>
