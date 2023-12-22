@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Of Events In JS</title>
+    <style>
+        *{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul id="unorder">
+        <li ><p id="js">JavaScript</p></li>
+        <li><p id="py">Python</p></li>
+        <li><p id="cplus">C++</p></li>
+        <li><p id="rb">Ruby</p></li>
+        <li><p id="csharp">C#</p></li>
+        <a href="https://mesum.online">PORTFOLIO</a>
+    </ul>
+
+    <script>
+        // const ul = document.querySelector("#unorder")
+        // console.log(ul);
+
+        // ul.addEventListener("click", (e) => {
+        //     console.log(e.type);
+        // })
+
+        const ul = document.querySelector("#unorder")
+        console.log(ul);
+        ul.addEventListener("click", (e)=>{
+            console.log("Tag Name:", e.target.tagName);
+            console.log("ID:", e.target.id);
+            if(e.target.tagName === "P"){
+                const parent_Node = e.target.parentNode
+                parent_Node.remove();
+            }else if(e.target.tagName === "A"){
+                e.preventDefault()
+                e.target.remove()
+            }
+        }, false /* false stops propagation, and true start propagating */)
+
+        // document.querySelector("a").addEventListener("click", (e) => {
+        //     console.log(e);
+        //     e.preventDefault()
+        //     const rm = e.target.nodeName
+        //     console.log(rm);
+        //     const parent_Node = e.target.parentNode
+        //     console.log(parent_Node);
+            
+        // })
+    </script>
+</body>
+</html>
