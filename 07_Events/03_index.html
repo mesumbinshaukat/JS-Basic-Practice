@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+
+<body>
+    <h2>Set Timer</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <p id="timer"></p>
+
+    <script>
+        const time = document.querySelector("#timer")
+        let setTimer;
+
+        document.querySelector("#start").addEventListener("click", () => {
+            setTimer = setInterval(function () {
+                time.innerHTML = new Date().toLocaleTimeString();
+            }, 1000);
+            console.log("TIME STARTED")
+        })
+
+        document.querySelector("#stop").addEventListener("click", () => {
+            clearInterval(setTimer)
+            console.log("TIME STOPPED")
+            console.log(setTimer)
+        })
+
+    </script>
+</body>
+
+</html>
