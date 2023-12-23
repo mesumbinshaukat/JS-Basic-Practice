@@ -48,9 +48,9 @@ const UserDetails = {
 console.log(UserDetails.__proto__[1].mName.greetMsg());
 
 const FName = {
-
+    name: {...UMName, ...ULName}
 }
 
-Object.setPrototypeOf(FName, UName, UMName)
+Object.setPrototypeOf(FName.name, UName)
 
-console.log(FName.mName)
+console.log(FName.name.fName + FName.name.mName + FName.name.lName)
