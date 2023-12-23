@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning About BIND</title>
+</head>
+
+<body>
+    <button>Click Me</button>
+
+    <script>
+        class MyLibrary {
+            constructor() {
+                this.library = "MEJS"
+                this.link = 'https://mesum.online'
+
+                document.querySelector("button").addEventListener("click", this.btn.bind(this))
+            }
+
+            btn() {
+                console.log("Library", this.library)
+                console.log("Link", this.link)
+            }
+        }
+
+        const lib = new MyLibrary()
+    </script>
+</body>
+
+</html>
