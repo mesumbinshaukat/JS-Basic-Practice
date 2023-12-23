@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+
+<body>
+
+    <div class="container" style="display: none;">
+        <h1>User Profile:</h1>
+        <div id="username">
+            <h3></h3>
+        </div>
+        <div id="link">
+            <h3></h3>
+        </div>
+        <div id="picture">
+            <img src="" alt="">
+        </div>
+    </div>
+    <button id="btn">Show</button>
+
+    <script>
+        let check = false
+        document.querySelector("#btn").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector(".container").style.display = "block"
+            document.querySelector("#btn").remove()
+            check = true
+
+            const requestUrl = 'https://api.github.com/users/mesumbinshaukat'
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', requestUrl)
+            xhr.onreadystatechange = function () {
+                console.log(xhr.readyState);
+                if (xhr.readyState === 4) {
+                    const data = JSON.parse(this.responseText)
+                    if (check) {
+                        const username = document.querySelector("#username")
+                        const link = document.querySelector("#link")
+                        const picture = document.querySelector("#picture")
+
+                        const uName = data.name
+                        const uLink = data.html_url
+                        const uPic = data.avatar_url
+
+                        console.log(uName)
+                        console.log(uLink)
+                        console.log(uPic)
+
+                        username.innerHTML = `<h3>Username:  ${uName}</h3>`
+                        link.innerHTML = `<h3>GitHub Profile: <a href="${uLink}">Let's Go...</a></h3>`
+                        picture.innerHTML = `<img src="${uPic}">`
+                    }
+                }
+            }
+
+            xhr.send()
+        })
+
+    </script>
+</body>
+
+</html>
