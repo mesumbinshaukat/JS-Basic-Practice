@@ -1,4 +1,4 @@
-# JS-Basic-Practice
+# JS Basic-Practice
 ## This is just the JavaScript practice repository but I will use GitHub codespaces for practice.
 
 >[Click here](https://stackblitz.com/edit/dom-project-chaiaurcode-2yejmx) for project links, which are available on Stackblitz for you to look at.
